@@ -4,7 +4,7 @@
 
 As the title says, this is social media application which allows users to share texts or images with others.
 
-The site is live on : [https://.netlify.app/](https://.netlify.app/)
+The site is live on : [https://status-share.netlify.app/](https://status-share.netlify.app/)
 
 ---
 
