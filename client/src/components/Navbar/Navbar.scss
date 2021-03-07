@@ -1,0 +1,72 @@
+$font-family: "Noto Sans", sans-serif;
+$primary-color: black;
+
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 12vh;
+  background-color: white;
+  border-bottom: 1px solid lightgrey;
+  position: sticky;
+  top: 0;
+  margin: 0 3%;
+  z-index: 1;
+  .navbarItemsLeft {
+    flex: 1;
+    input {
+      font-size: 1.1em;
+      font-family: $font-family;
+    }
+  }
+  .navbarItemsCenter {
+    flex: 1;
+    .addStatus {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 10px 25px;
+      margin: 0 auto;
+      width: fit-content;
+      border: 1px solid lightgrey;
+      border-radius: 40px;
+      svg {
+        padding-top: 2px;
+        font-size: 1.7em;
+        color: darkgrey;
+      }
+      p {
+        margin: 0 0 0 15px;
+        font-size: 1.1em;
+        font-family: $font-family;
+      }
+    }
+  }
+  .navbarItemsRight {
+    justify-content: flex-end;
+    flex: 1;
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      list-style-type: none;
+      padding: 0;
+      svg {
+        cursor: pointer;
+        padding-top: 2px;
+        color: darkgrey;
+      }
+      li {
+        color: $primary-color;
+        font-family: $font-family;
+        font-size: 1.2em;
+        font-weight: 400;
+        cursor: pointer;
+        margin: 5px 15px;
+        padding: 10px 10px;
+      }
+      li:hover {
+        transition: all ease-in-out 0.75s;
+      }
+    }
+  }
+}

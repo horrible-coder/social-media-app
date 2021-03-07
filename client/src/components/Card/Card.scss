@@ -1,0 +1,112 @@
+$font-family: "Noto Sans", sans-serif;
+
+.card {
+  width: 300px;
+  background-color: white;
+  border-radius: 3px;
+  padding: 10px 0 20px;
+  margin: 10px;
+  .userInfo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 0 20px;
+    svg {
+      width: 20px;
+      height: 20px;
+      padding: 20px;
+      background-color: whitesmoke;
+      border-radius: 50px;
+    }
+    p {
+      width: 240px;
+      text-align: right;
+      margin: 0;
+      font-size: 1.05em;
+      font-weight: 400;
+      font-family: $font-family;
+    }
+  }
+  .statusContent {
+    margin-bottom: 15px;
+    position: relative;
+    .statusText {
+      color: white;
+      font-family: $font-family;
+      padding: 15px;
+      font-size: 1.3em;
+      height: 174px;
+      margin: 0;
+    }
+    img {
+      width: 300px;
+      height: 200px;
+    }
+
+    .time {
+      position: absolute;
+      text-align: right;
+      bottom: 8px;
+      right: 8px;
+      padding: 1px 3px;
+      border-radius: 3px;
+      margin: 0;
+      font-size: 0.8em;
+      color: white;
+      font-family: $font-family;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+  }
+  .reactions {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    .like,
+    .love,
+    .share {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      margin: 0 15px;
+      svg {
+        flex: 3;
+        cursor: pointer;
+        color: lightgrey;
+      }
+      p {
+        flex: 2;
+        text-align: center;
+        font-size: 0.8em;
+        margin: 0;
+        color: rgb(107, 107, 107);
+      }
+    }
+    .like:hover {
+      svg {
+        color: rgb(65, 179, 255);
+      }
+    }
+    .love:hover {
+      svg {
+        color: rgb(255, 34, 107);
+      }
+    }
+    .share:hover {
+      svg {
+        color: rgb(74, 255, 128);
+      }
+    }
+  }
+  .comment {
+    textarea {
+      width: calc(100% - 22px);
+      border-radius: 3px;
+      border: 1px solid lightgrey;
+      padding: 10px;
+      resize: none;
+      font-family: $font-family;
+      font-size: 0.9em;
+    }
+  }
+}

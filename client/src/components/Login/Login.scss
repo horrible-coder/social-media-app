@@ -1,0 +1,110 @@
+$font-family: "Noto Sans", sans-serif;
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  input {
+    padding: 10px 20px;
+    width: 400px;
+    font-size: 1.1em;
+    font-family: $font-family;
+    color: rgb(134, 134, 134);
+    border: none;
+    border-bottom: 2px solid lightgrey;
+    transition: 0.4s ease-in;
+    margin-bottom: 20px;
+  }
+  input:focus {
+    border-bottom: 2px solid rgb(255, 125, 146);
+  }
+  p {
+    margin: 0;
+    margin-top: 10px;
+    font-family: $font-family;
+    span {
+      color: rgb(83, 0, 83);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    span:hover {
+      color: rgb(53, 0, 53);
+    }
+  }
+  .loginButton {
+    text-decoration: none;
+    background-color: rgb(83, 0, 83);
+    border: none;
+    border-radius: 5px;
+    padding: 12px 40px;
+    font-family: $font-family;
+    font-size: 1.1em;
+    margin: 25px;
+    transition: 0.4s ease-in;
+    cursor: pointer;
+
+    text-decoration: none;
+    color: white;
+  }
+  .loginButton:hover {
+    background-color: rgb(53, 0, 53);
+
+    color: white;
+  }
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  input {
+    padding: 10px 20px;
+    width: 400px;
+    font-size: 1.1em;
+    font-family: $font-family;
+    color: rgb(134, 134, 134);
+    border: none;
+    border-bottom: 2px solid lightgrey;
+    transition: 0.4s ease-in;
+    margin-bottom: 20px;
+  }
+  input:focus {
+    border-bottom: 2px solid rgb(255, 125, 146);
+  }
+  p {
+    margin: 0;
+    margin-top: 10px;
+    font-family: $font-family;
+    span {
+      color: rgb(83, 0, 83);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    span:hover {
+      color: rgb(53, 0, 53);
+    }
+  }
+  .signupButton {
+    text-decoration: none;
+    background-color: rgb(83, 0, 83);
+    border: none;
+    border-radius: 5px;
+    padding: 12px 40px;
+    font-family: $font-family;
+    font-size: 1.1em;
+    margin: 25px;
+    transition: 0.4s ease-in;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+  }
+  .signupButton:hover {
+    background-color: rgb(53, 0, 53);
+    color: white;
+  }
+}

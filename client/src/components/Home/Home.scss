@@ -1,0 +1,16 @@
+.home {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  .cardsContainer {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    #loader {
+      margin: 20vh;
+      width: 100px;
+    }
+  }
+}
