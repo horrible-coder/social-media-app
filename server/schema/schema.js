@@ -1,6 +1,7 @@
 const graphql = require("graphql");
 const User = require("../models/User");
 const Card = require("../models/Card");
+const { hashPassword, comparePassword } = require("../utils/password");
 
 const {
   GraphQLSchema,
@@ -84,7 +85,7 @@ const Mutation = new GraphQLObjectType({
       resolve: async (parent, args) => {
         let user = new User({
           username: args.username,
-          password: args.password,
+          password: await hashPassword(args.password),
           fullName: args.fullName,
         });
         const newUser = await user.save();
@@ -97,11 +98,15 @@ const Mutation = new GraphQLObjectType({
         username: { type: new GraphQLNonNull(GraphQLString) },
         password: { type: new GraphQLNonNull(GraphQLString) },
       },
-      resolve: async (parent, args) =>
-        await User.findOne({
+      resolve: async (parent, args) => {
+        const existing = await User.findOne({
           username: args.username,
-          password: args.password,
-        }),
+        });
+        const matched = await comparePassword(args.password, existing.password);
+        if (matched) {
+          return existing;
+        }
+      },
     },
     addCard: {
       type: CardType,
