@@ -16,7 +16,7 @@ function Navbar() {
   const history = useHistory();
   const handleLogout = () => {
     localStorage.clear();
-    history.push("/login");
+    history.push("/");
   };
 
   return (

@@ -37,7 +37,7 @@ function Login() {
           localStorage.setItem(LS_PREFIX + "id", data.id);
           localStorage.setItem(LS_PREFIX + "username", data.username);
           localStorage.setItem(LS_PREFIX + "fullName", data.fullName);
-          history.push("/");
+          history.push("/home");
         }
       })
       .catch((err) => console.log(err));
