@@ -88,6 +88,10 @@ const Mutation = new GraphQLObjectType({
           password: await hashPassword(args.password),
           fullName: args.fullName,
         });
+        const existing = await User.findOne({
+          username: args.username,
+        });
+        if (existing) throw new Error("Account with this username exists");
         const newUser = await user.save();
         return newUser;
       },
@@ -102,9 +106,12 @@ const Mutation = new GraphQLObjectType({
         const existing = await User.findOne({
           username: args.username,
         });
+        if (!existing) throw new Error("Account doesn't exist");
         const matched = await comparePassword(args.password, existing.password);
         if (matched) {
           return existing;
+        } else {
+          throw new Error("Incorrect password");
         }
       },
     },

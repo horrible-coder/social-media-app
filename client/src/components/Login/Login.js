@@ -27,6 +27,14 @@ function Login() {
   };
 
   const handleLoginButton = async () => {
+    try {
+      if (!username) throw new Error("Provide an username");
+      if (!password) throw new Error("Provide a password");
+    } catch (err) {
+      window.alert(err);
+      return;
+    }
+
     await loginUser({
       variables: { username: username, password: password },
     })
@@ -40,7 +48,7 @@ function Login() {
           history.push("/home");
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => window.alert(err));
     setUsername("");
     setPassword("");
   };
@@ -50,11 +58,24 @@ function Login() {
   };
 
   const handleSignupButton = async () => {
+    try {
+      if (!username) throw new Error("Provide an username");
+      if (!password) throw new Error("Provide a password");
+      if (!fullName) throw new Error("Provide your full name");
+      if (password.length < 8)
+        throw new Error("Password should be minimum of 8 characters");
+    } catch (err) {
+      window.alert(err);
+      return;
+    }
+
     await addUser({
       variables: { username: username, password: password, fullName: fullName },
     })
-      .then((res) => setFormLogin(true))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        setFormLogin(true);
+      })
+      .catch((err) => window.alert(err));
     setUsername("");
     setPassword("");
     setFullName("");
